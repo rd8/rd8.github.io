@@ -4,7 +4,7 @@
   <title><![CDATA[GO]]></title>
   <link href="http://rd8.github.io/atom.xml" rel="self"/>
   <link href="http://rd8.github.io/"/>
-  <updated>2014-07-15T14:31:08-05:00</updated>
+  <updated>2014-07-15T14:35:08-05:00</updated>
   <id>http://rd8.github.io/</id>
   <author>
     <name><![CDATA[rd8]]></name>
@@ -122,6 +122,12 @@
 </span><span class="line">       <span class="n">perm2</span><span class="o">(</span><span class="n">elements</span><span class="o">);</span>
 </span><span class="line">    <span class="o">}</span>
 </span><span class="line"><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Javascript Array Syntax</span><a href="http://j.mp/pPUUmW">MDN Documentation </a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="js"><span class="line"><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">arrayLength</span><span class="p">);</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">element0</span><span class="p">,</span> <span class="nx">element1</span><span class="p">,</span> <span class="p">...,</span> <span class="nx">elementN</span><span class="p">);</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 ]]></content>
   </entry>
