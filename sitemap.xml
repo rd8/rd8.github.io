@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://rd8.github.io/blog/2014/07/15/set-vlc-as-default-video-player-in-centos-7/</loc>
+    <lastmod>2014-07-15T21:34:16-05:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://rd8.github.io/blog/2014/07/15/string-permutation-java/</loc>
     <lastmod>2014-07-15T14:29:19-05:00</lastmod>
     <priority>0.8</priority>
@@ -11,35 +17,35 @@
   
   <url>
     <loc>http://rd8.github.io/blog/archives/</loc>
-    <lastmod>2014-07-15T20:46:22-05:00</lastmod>
+    <lastmod>2014-07-16T01:47:12-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://rd8.github.io/</loc>
-    <lastmod>2014-07-15T20:46:22-05:00</lastmod>
+    <lastmod>2014-07-16T01:47:12-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://rd8.github.io/blog/</loc>
-    <lastmod>2014-07-15T20:46:22-05:00</lastmod>
+    <lastmod>2014-07-16T01:47:12-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://rd8.github.io/about/</loc>
-    <lastmod>2014-07-15T20:46:22-05:00</lastmod>
+    <lastmod>2014-07-16T01:47:12-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://rd8.github.io/</loc>
-    <lastmod>2014-07-15T20:46:22-05:00</lastmod>
+    <lastmod>2014-07-16T01:47:12-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
