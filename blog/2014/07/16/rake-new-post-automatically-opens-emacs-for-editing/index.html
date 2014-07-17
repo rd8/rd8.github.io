@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Set VLC as Default Video Player in CentOS 7 - G.{O}</title>
+  <title>Rake New_post Automatically Opens Emacs for Editing - G.{O}</title>
   <meta name="author" content="rd8">
 
   
-  <meta name="description" content="It took a while to build VLC player from git source under new CentOS 7. Theoretically you should only install those packages marked with el7, but &hellip;">
+  <meta name="description" content="I am looking for some automattions in octopress posting and deploying. The first thing is to automatically input github credential; this seems no &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://rd8.github.io/blog/2014/07/15/set-vlc-as-default-video-player-in-centos-7">
+  <link rel="canonical" href="http://rd8.github.io/blog/2014/07/16/rake-new-post-automatically-opens-emacs-for-editing">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="G.{O}" type="application/atom+xml">
@@ -98,7 +98,7 @@
   
   <header>
     
-      <h1 class="entry-title">Set VLC as Default Video Player in CentOS 7</h1>
+      <h1 class="entry-title">Rake New_post Automatically Opens Emacs for Editing</h1>
     
     
       <p class="meta">
@@ -114,45 +114,22 @@
   
 
 
-<time datetime="2014-07-15T21:34:16-05:00" pubdate data-updated="true">Jul 15<sup>th</sup>, 2014</time>
+<time datetime="2014-07-16T03:21:43-05:00" pubdate data-updated="true">Jul 16<sup>th</sup>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>It took a while to build VLC player from git source under new CentOS 7.</p>
+<div class="entry-content"><p>I am looking for some automattions in octopress posting and deploying. The first thing is to automatically input github credential; this seems no direct way but some cia Travis CI.</p>
 
-<p>Theoretically you should only install those packages marked with el7, but some packages with el6 are only available for the time being, and they are needed in compiling other packages. Another thing is, even if you have installed an el7 version of some package, like aalib, when you do yum update, it asks you to update to its el6 version, which would definitely fail.</p>
+<p>Another thing is to automatically open emacs for new post. Here is the solution:</p>
 
-<p>There are several repos helped me a bit with it:</p>
+<p>http://www.andrewboni.com/2013/08/18/octopress-and-sublimetext2/</p>
 
-<ol>
-  <li>base: mirrors.easynews.com</li>
-  <li>epel: mirror.utexas.edu</li>
-  <li>extras: mirror.anl.gov</li>
-  <li>linuxtech-release: pkgrepo.linuxtech.net</li>
-  <li>nux-dextop: mirror.li.nux.ro</li>
-  <li>rpmforge: mirror.team-cymru.org</li>
-  <li>rpmfusion-free-updates: mirror.nexcess.net</li>
-  <li>updates: centosi3.centos.org</li>
-</ol>
+<p>Basically just add one line in Rakefile, and it’s done.</p>
 
-<p>It’s helpful to use yum whatprovides <lib file="" name=""> to check what packages provide a specified lib file. Most of the time, the dependencies are installed one by one. &#8211;skip-broken can help a bit in batch install, but it is still clearer to solve dependencies in steps.</lib></p>
-
-<p>Ok, the short version of the long story is, VLC can be installed after ffmpeg and several other important packages have been installed in CentOS 7. And, the more important thing is, hardware acceleration can be enabled if you are using Intel Sandy Bridge CPU like i3, i5. Maybe another post would be good to address this, because it is the key to get better performance for a modern video player.</p>
-
-<p>My recent but not last annoyance in VLC under CentOS 7 is, it is not shown in the list of applications when you click a video file.</p>
-
-<p><span align="center">
-<img src="/images/posts/2014-07-15-open-with-other-apps.png" />
-</span></p>
-
-<p>It is not so easy to make VLC appear in this list, but I happened to find a dummy way to do this, and even better:</p>
-
-<p><img src="/images/posts/2014-07-15-set-vlc-as-default.png" /></p>
-
-<p>This terminated my pain. Now VLC is the best video player in my CentOS box, kicking XBMC to be the choice only for LAN video playing.</p>
+<p>The last thing would be automatically run rake generate and rake deploy when emacs saves the file. Not sure if emacs lisp fans have a ready answer for that.</p>
 </div>
 
 
@@ -175,7 +152,7 @@
   
 
 
-<time datetime="2014-07-15T21:34:16-05:00" pubdate data-updated="true">Jul 15<sup>th</sup>, 2014</time>
+<time datetime="2014-07-16T03:21:43-05:00" pubdate data-updated="true">Jul 16<sup>th</sup>, 2014</time>
       
 
 
@@ -190,10 +167,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/07/15/string-permutation-java/" title="Previous Post: String Permutation - Java">&laquo; String Permutation - Java</a>
+        <a class="basic-alignment left" href="/blog/2014/07/15/set-vlc-as-default-video-player-in-centos-7/" title="Previous Post: Set VLC as default video player in CentOS 7">&laquo; Set VLC as default video player in CentOS 7</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/07/16/rake-new-post-automatically-opens-emacs-for-editing/" title="Next Post: rake new_post automatically opens emacs for editing">rake new_post automatically opens emacs for editing &raquo;</a>
       
     </p>
   </footer>

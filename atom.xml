@@ -4,7 +4,7 @@
   <title><![CDATA[G.{O}]]></title>
   <link href="http://rd8.github.io/atom.xml" rel="self"/>
   <link href="http://rd8.github.io/"/>
-  <updated>2014-07-16T02:18:22-05:00</updated>
+  <updated>2014-07-17T15:57:18-05:00</updated>
   <id>http://rd8.github.io/</id>
   <author>
     <name><![CDATA[rd8]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Rake New_post Automatically Opens Emacs for Editing]]></title>
+    <link href="http://rd8.github.io/blog/2014/07/16/rake-new-post-automatically-opens-emacs-for-editing/"/>
+    <updated>2014-07-16T03:21:43-05:00</updated>
+    <id>http://rd8.github.io/blog/2014/07/16/rake-new-post-automatically-opens-emacs-for-editing</id>
+    <content type="html"><![CDATA[<p>I am looking for some automattions in octopress posting and deploying. The first thing is to automatically input github credential; this seems no direct way but some cia Travis CI.</p>
+
+<p>Another thing is to automatically open emacs for new post. Here is the solution:</p>
+
+<p>http://www.andrewboni.com/2013/08/18/octopress-and-sublimetext2/</p>
+
+<p>Basically just add one line in Rakefile, and it’s done.</p>
+
+<p>The last thing would be automatically run rake generate and rake deploy when emacs saves the file. Not sure if emacs lisp fans have a ready answer for that.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Set VLC as Default Video Player in CentOS 7]]></title>
