@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>G.{O}</title>
+  <title>Cairo-dock in CentOS 7 - G.{O}</title>
   <meta name="author" content="rd8">
 
   
-  <meta name="description" content="Blog Archives Recent Posts Cairo-dock in CentOS 7 Rake New_post Automatically Opens Emacs for Editing Set VLC as Default Video Player in CentOS 7 &hellip;">
+  <meta name="description" content="There is some trick in compiling cairo-dock and cairo-dock-plugin in CentOS 7 using Cinnamon desktop manager. Basically when I was following the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://rd8.github.io/blog">
+  <link rel="canonical" href="http://rd8.github.io/blog/2014/07/18/cairo-dock-in-centos-7">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="G.{O}" type="application/atom+xml">
@@ -96,15 +96,116 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
+  <header>
+    
+      <h1 class="entry-title">Cairo-dock in CentOS 7</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
   
-  <div class="pagination">
+
+
+<time datetime="2014-07-18T12:37:36-05:00" pubdate data-updated="true">Jul 18<sup>th</sup>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://rd8.github.io">Comments</a>
+        
+      </p>
     
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  </header>
+
+
+<div class="entry-content"><p>There is some trick in compiling cairo-dock and cairo-dock-plugin in CentOS 7 using Cinnamon desktop manager.</p>
+
+<p>Basically when I was following the instructions on glx-dock offical page, I have already had most of the dependencies installed. The compiling of cairo-dock has no problem, except a road-block met in compiling the plugin folder.</p>
+
+<p>It asked me to install libgldi.so, which was in vain trying yum install.</p>
+
+<p>Luckly, a post answered this question for installing cairo-dock on CentOS 6. And the trick is to execute the following commands:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nv">$ </span><span class="nb">export </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span>/usr/lib/pkgconfig:/usr/local/lib/pkgconfig
+</span><span class="line"><span class="nv">$ </span>pkg-config gldi --variable<span class="o">=</span>pluginsdir
+</span><span class="line">find /usr -name gldi.pc
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Well the last line was to confirm the file gldi.pc located at the corresponding path. After this, the Cairo-dock was installed smoothly. To set it auto start, add an item in program list at start-up: cairo-dock -o, which means using hardware acceleration OpenGL, and yy system has already enabled it.</p>
+
+<p>With a screenshot to end this tip:</p>
+
+<p><img scr="/images/posts/2014-07-18-cairo-dock.png" /></p>
 </div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">rd8</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-18T12:37:36-05:00" pubdate data-updated="true">Jul 18<sup>th</sup>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/07/16/rake-new-post-automatically-opens-emacs-for-editing/" title="Previous Post: rake new_post automatically opens emacs for editing">&laquo; rake new_post automatically opens emacs for editing</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -135,6 +236,7 @@
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p align="center">
@@ -149,7 +251,10 @@
       var disqus_shortname = 'g-o';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://rd8.github.io/blog/2014/07/18/cairo-dock-in-centos-7/';
+        var disqus_url = 'http://rd8.github.io/blog/2014/07/18/cairo-dock-in-centos-7/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://rd8.github.io/blog/2014/07/18/cairo-dock-in-centos-7/</loc>
+    <lastmod>2014-07-18T12:37:36-05:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://rd8.github.io/blog/2014/07/16/rake-new-post-automatically-opens-emacs-for-editing/</loc>
     <lastmod>2014-07-16T03:21:43-05:00</lastmod>
     <priority>0.8</priority>
@@ -23,49 +29,49 @@
   
   <url>
     <loc>http://rd8.github.io/blog/archives/</loc>
-    <lastmod>2014-07-17T20:20:58-05:00</lastmod>
+    <lastmod>2014-07-18T12:47:50-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://rd8.github.io/blog/</loc>
-    <lastmod>2014-07-17T20:20:58-05:00</lastmod>
+    <lastmod>2014-07-18T12:47:50-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://rd8.github.io/</loc>
-    <lastmod>2014-07-17T20:20:58-05:00</lastmod>
+    <lastmod>2014-07-18T12:47:50-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://rd8.github.io/blog/tags/</loc>
-    <lastmod>2014-07-17T20:20:58-05:00</lastmod>
+    <lastmod>2014-07-18T12:47:50-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://rd8.github.io/blog/categories/</loc>
-    <lastmod>2014-07-17T20:20:58-05:00</lastmod>
+    <lastmod>2014-07-18T12:47:50-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://rd8.github.io/about/</loc>
-    <lastmod>2014-07-17T20:20:58-05:00</lastmod>
+    <lastmod>2014-07-18T12:47:50-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://rd8.github.io/</loc>
-    <lastmod>2014-07-17T20:20:58-05:00</lastmod>
+    <lastmod>2014-07-18T12:47:50-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

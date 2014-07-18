@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | G.{O}]]></title>
   <link href="http://rd8.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://rd8.github.io/"/>
-  <updated>2014-07-17T20:20:58-05:00</updated>
+  <updated>2014-07-18T12:47:50-05:00</updated>
   <id>http://rd8.github.io/</id>
   <author>
     <name><![CDATA[rd8]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Cairo-dock in CentOS 7]]></title>
+    <link href="http://rd8.github.io/blog/2014/07/18/cairo-dock-in-centos-7/"/>
+    <updated>2014-07-18T12:37:36-05:00</updated>
+    <id>http://rd8.github.io/blog/2014/07/18/cairo-dock-in-centos-7</id>
+    <content type="html"><![CDATA[<p>There is some trick in compiling cairo-dock and cairo-dock-plugin in CentOS 7 using Cinnamon desktop manager.</p>
+
+<p>Basically when I was following the instructions on glx-dock offical page, I have already had most of the dependencies installed. The compiling of cairo-dock has no problem, except a road-block met in compiling the plugin folder.</p>
+
+<p>It asked me to install libgldi.so, which was in vain trying yum install.</p>
+
+<p>Luckly, a post answered this question for installing cairo-dock on CentOS 6. And the trick is to execute the following commands:</p>
+
+<p><code>bash
+$ export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/local/lib/pkgconfig
+$ pkg-config gldi --variable=pluginsdir
+find /usr -name gldi.pc
+</code></p>
+
+<p>Well the last line was to confirm the file gldi.pc located at the corresponding path. After this, the Cairo-dock was installed smoothly. To set it auto start, add an item in program list at start-up: cairo-dock -o, which means using hardware acceleration OpenGL, and yy system has already enabled it.</p>
+
+<p>With a screenshot to end this tip:</p>
+
+<p><img scr="/images/posts/2014-07-18-cairo-dock.png" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Set VLC as Default Video Player in CentOS 7]]></title>

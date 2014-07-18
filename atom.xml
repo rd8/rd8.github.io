@@ -4,7 +4,7 @@
   <title><![CDATA[G.{O}]]></title>
   <link href="http://rd8.github.io/atom.xml" rel="self"/>
   <link href="http://rd8.github.io/"/>
-  <updated>2014-07-17T20:20:58-05:00</updated>
+  <updated>2014-07-18T12:47:50-05:00</updated>
   <id>http://rd8.github.io/</id>
   <author>
     <name><![CDATA[rd8]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Cairo-dock in CentOS 7]]></title>
+    <link href="http://rd8.github.io/blog/2014/07/18/cairo-dock-in-centos-7/"/>
+    <updated>2014-07-18T12:37:36-05:00</updated>
+    <id>http://rd8.github.io/blog/2014/07/18/cairo-dock-in-centos-7</id>
+    <content type="html"><![CDATA[<p>There is some trick in compiling cairo-dock and cairo-dock-plugin in CentOS 7 using Cinnamon desktop manager.</p>
+
+<p>Basically when I was following the instructions on glx-dock offical page, I have already had most of the dependencies installed. The compiling of cairo-dock has no problem, except a road-block met in compiling the plugin folder.</p>
+
+<p>It asked me to install libgldi.so, which was in vain trying yum install.</p>
+
+<p>Luckly, a post answered this question for installing cairo-dock on CentOS 6. And the trick is to execute the following commands:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nv">$ </span><span class="nb">export </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span>/usr/lib/pkgconfig:/usr/local/lib/pkgconfig
+</span><span class="line"><span class="nv">$ </span>pkg-config gldi --variable<span class="o">=</span>pluginsdir
+</span><span class="line">find /usr -name gldi.pc
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Well the last line was to confirm the file gldi.pc located at the corresponding path. After this, the Cairo-dock was installed smoothly. To set it auto start, add an item in program list at start-up: cairo-dock -o, which means using hardware acceleration OpenGL, and yy system has already enabled it.</p>
+
+<p>With a screenshot to end this tip:</p>
+
+<p><img scr="/images/posts/2014-07-18-cairo-dock.png" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Rake New_post Automatically Opens Emacs for Editing]]></title>
