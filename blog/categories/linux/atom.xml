@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | G.{O}]]></title>
   <link href="http://rd8.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://rd8.github.io/"/>
-  <updated>2014-07-18T13:29:25-05:00</updated>
+  <updated>2014-07-18T13:31:15-05:00</updated>
   <id>http://rd8.github.io/</id>
   <author>
     <name><![CDATA[rd8]]></name>
@@ -36,9 +36,9 @@ find /usr -name gldi.pc
 
 <p>With a screenshot to end this tip:</p>
 
-<p>{img center /images/posts/2014-07-18-cairo-dock1.png %}</p>
+<p>{img center /images/posts/2014-07-18-cairo-dock1.png ‘image’ ‘images’ %}</p>
 
-<p>{img center /images/posts/2014-07-15-set-vlc-as-default.png %}</p>
+<p>{img center /images/posts/2014-07-15-set-vlc-as-default.png ‘image’ ‘images’ %}</p>
 
 <p><a href="/images/posts/2014-07-18-cairo-dock.png">Full size image</a></p>
 ]]></content>
