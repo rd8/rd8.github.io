@@ -4,7 +4,7 @@
   <title><![CDATA[G.{O}]]></title>
   <link href="http://rd8.github.io/atom.xml" rel="self"/>
   <link href="http://rd8.github.io/"/>
-  <updated>2014-07-18T13:11:26-05:00</updated>
+  <updated>2014-07-18T13:14:18-05:00</updated>
   <id>http://rd8.github.io/</id>
   <author>
     <name><![CDATA[rd8]]></name>
@@ -40,7 +40,9 @@
 
 <p><img scr="/images/posts/2014-07-18-cairo-dock1.png" /></p>
 
-<p><a href="http://rd8.github.io/images/posts/2014-07-18-cairo-dock1.png">Full size image</a></p>
+<p><img src="http://rd8.github.io/images/posts/2014-07-15-set-vlc-as-default.png" /></p>
+
+<p><a href="http://rd8.github.io/images/posts/2014-07-18-cairo-dock.png">Full size image</a></p>
 ]]></content>
   </entry>
   
