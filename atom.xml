@@ -4,7 +4,7 @@
   <title><![CDATA[G.{O}]]></title>
   <link href="http://rd8.github.io/atom.xml" rel="self"/>
   <link href="http://rd8.github.io/"/>
-  <updated>2014-07-18T13:33:00-05:00</updated>
+  <updated>2014-07-18T13:48:52-05:00</updated>
   <id>http://rd8.github.io/</id>
   <author>
     <name><![CDATA[rd8]]></name>
@@ -38,7 +38,7 @@
 
 <p>With a screenshot to end this tip:</p>
 
-<p><img class="center" src="http://rd8.github.io/images/posts/2014-07-18-cairo-dock1.png" title="image" alt="images" /></p>
+<p><img class="center" src="http://rd8.github.io/images/posts/2014-07-18-cairo-dock.png" title="image" alt="images" /></p>
 
 <p><img class="center" src="http://rd8.github.io/images/posts/2014-07-15-set-vlc-as-default.png" title="image" alt="images" /></p>
 
@@ -91,13 +91,11 @@
 
 <p>My recent but not last annoyance in VLC under CentOS 7 is, it is not shown in the list of applications when you click a video file.</p>
 
-<p><span align="center">
-<img src="http://rd8.github.io/images/posts/2014-07-15-open-with-other-apps.png" />
-</span></p>
+<p><img class="center" src="http://rd8.github.io/images/posts/2014-07-15-open-with-other-apps.png" /></p>
 
 <p>It is not so easy to make VLC appear in this list, but I happened to find a dummy way to do this, and even better:</p>
 
-<p><img src="http://rd8.github.io/images/posts/2014-07-15-set-vlc-as-default.png" /></p>
+<p><img class="center" src="http://rd8.github.io/images/posts/2014-07-15-set-vlc-as-default.png" /></p>
 
 <p>This terminated my pain. Now VLC is the best video player in my CentOS box, kicking XBMC to be the choice only for LAN video playing.</p>
 ]]></content>
