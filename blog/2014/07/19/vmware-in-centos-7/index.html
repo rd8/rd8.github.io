@@ -129,52 +129,60 @@
 
 <div class="entry-content"><p>VMWare workstation newest version, 10.0.3 does not have a smooth installation in CentOS 7.</p>
 
-<p>The manual patch way is to manually revise the version check for linux kernel in filter.c to pass the installation of vmnet. Here is the details:
-&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">cd /usr/lib/vmware/modules/source
-</span><span class="line">tar -xvf vmnet.tar
-</span><span class="line">cd vmnet-only
-</span><span class="line">vi filter.c</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;
-in line 205:</p>
-
-<p>replace
-&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">#if LINUX_VERSION_CODE &lt; KERNEL_VERSION(3, 13, 0)</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;
-with
-&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">#if LINUX_VERSION_CODE &lt; KERNEL_VERSION(3, 0, 0)</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;
-then tar it again:</p>
+<p>The manual patch way is to manually revise the version check for linux kernel in filter.c to pass the installation of vmnet. Here is the details:</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
 <span class="line-number">4</span>
-<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">cd /usr/lib/vmware/modules/source
+</span><span class="line">tar -xvf vmnet.tar
+</span><span class="line">cd vmnet-only
+</span><span class="line">vi filter.c</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>in line 205, replace</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">#if LINUX_VERSION_CODE &lt; KERNEL_VERSION(3, 13, 0)</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>with</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">#if LINUX_VERSION_CODE &lt; KERNEL_VERSION(3, 0, 0)</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>then tar it again:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">   cd ..
 </span><span class="line">   tar -uvf vmnet.tar vmnet-only
-</span><span class="line">   rm -fr vmnet-only
-</span><span class="line">
-</span><span class="line">By the way, to uninstall vmware in CentOS:
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>$vmware-installer -l
-&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
-<span class="line-number">2</span>
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">
-</span><span class="line">The output would give product name and product version strings.</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;
-Product Name         Product Version
-==================   ===============
-vmware-workstation   10.0.1.528992</p>
+</span><span class="line">   rm -fr vmnet-only</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>Use them to uninstall Vmware:
-&#8220;`
-$vmware-installer -u {product-name}{product-version}</p>
+<p>By the way, to uninstall vmware in CentOS:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">$vmware-installer -l</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>The output would give product name and product version strings.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">Product Name         Product Version
+</span><span class="line">==================   ===============
+</span><span class="line">vmware-workstation   10.0.1.528992</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Use them to uninstall Vmware:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">$vmware-installer -u {product-name}{product-version}</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>I still mee some minor problems in running vmware due to gtk+ theme engine and pk-gtk-module: /usr/lib64/libgtk-3.so.0 problem, but the workstation GUI works well now.</p>
 
-<p>Linux is our original sin, but Windows is our samsara pain. I mean it is painful when we have not understood and mastered Linux, but the suffer only comes to us once. By using Windows, the pain repeatly comes to us for each new version, for each new platform.</p>
+<p>Ignorance is our original sin, and Linux is only a very small part of it. There is a kind of samsara pain in our original sins, and Windows is only a very small example of it.</p>
+
+<p>I mean it is painful when we have not understood and mastered Linux, but the suffer only comes to us once. By using Windows, the pain repeatly comes to us for each new version, for each new platform.</p>
 </div>
 
 

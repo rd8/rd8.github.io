@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | G.{O}]]></title>
   <link href="http://rd8.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://rd8.github.io/"/>
-  <updated>2014-07-19T14:00:47-05:00</updated>
+  <updated>2014-07-19T14:11:47-05:00</updated>
   <id>http://rd8.github.io/</id>
   <author>
     <name><![CDATA[rd8]]></name>
@@ -20,29 +20,34 @@
     <id>http://rd8.github.io/blog/2014/07/19/vmware-in-centos-7</id>
     <content type="html"><![CDATA[<p>VMWare workstation newest version, 10.0.3 does not have a smooth installation in CentOS 7.</p>
 
-<p>The manual patch way is to manually revise the version check for linux kernel in filter.c to pass the installation of vmnet. Here is the details:
-<code>
+<p>The manual patch way is to manually revise the version check for linux kernel in filter.c to pass the installation of vmnet. Here is the details:</p>
+
+<p><code>
     cd /usr/lib/vmware/modules/source
     tar -xvf vmnet.tar
     cd vmnet-only
     vi filter.c
-</code>
-in line 205:</p>
+</code></p>
 
-<p>replace
-<code>
+<p>in line 205, replace</p>
+
+<p><code>
 #if LINUX_VERSION_CODE &lt; KERNEL_VERSION(3, 13, 0)
-</code>
-with
-<code>
-#if LINUX_VERSION_CODE &lt; KERNEL_VERSION(3, 0, 0)
-</code>
-then tar it again:</p>
+</code></p>
 
-<p>```
+<p>with</p>
+
+<p><code>
+#if LINUX_VERSION_CODE &lt; KERNEL_VERSION(3, 0, 0)
+</code></p>
+
+<p>then tar it again:</p>
+
+<p><code>
    cd ..
    tar -uvf vmnet.tar vmnet-only
-   rm -fr vmnet-only</p>
+   rm -fr vmnet-only
+</code></p>
 
 <p>By the way, to uninstall vmware in CentOS:</p>
 
@@ -50,19 +55,25 @@ then tar it again:</p>
 $vmware-installer -l
 </code></p>
 
-<p>The output would give product name and product version strings.
-```
+<p>The output would give product name and product version strings.</p>
+
+<p><code>
 Product Name         Product Version
 ==================   ===============
-vmware-workstation   10.0.1.528992</p>
+vmware-workstation   10.0.1.528992
+</code></p>
 
-<p>Use them to uninstall Vmware:
-```
-$vmware-installer -u {product-name}{product-version}</p>
+<p>Use them to uninstall Vmware:</p>
+
+<p><code>
+$vmware-installer -u {product-name}{product-version}
+</code></p>
 
 <p>I still mee some minor problems in running vmware due to gtk+ theme engine and pk-gtk-module: /usr/lib64/libgtk-3.so.0 problem, but the workstation GUI works well now.</p>
 
-<p>Linux is our original sin, but Windows is our samsara pain. I mean it is painful when we have not understood and mastered Linux, but the suffer only comes to us once. By using Windows, the pain repeatly comes to us for each new version, for each new platform.</p>
+<p>Ignorance is our original sin, and Linux is only a very small part of it. There is a kind of samsara pain in our original sins, and Windows is only a very small example of it.</p>
+
+<p>I mean it is painful when we have not understood and mastered Linux, but the suffer only comes to us once. By using Windows, the pain repeatly comes to us for each new version, for each new platform.</p>
 ]]></content>
   </entry>
   
