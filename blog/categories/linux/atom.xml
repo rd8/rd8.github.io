@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | G.{O}]]></title>
   <link href="http://rd8.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://rd8.github.io/"/>
-  <updated>2014-07-18T13:50:49-05:00</updated>
+  <updated>2014-07-19T14:00:47-05:00</updated>
   <id>http://rd8.github.io/</id>
   <author>
     <name><![CDATA[rd8]]></name>
@@ -14,13 +14,66 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Vmware in CentOS 7]]></title>
+    <link href="http://rd8.github.io/blog/2014/07/19/vmware-in-centos-7/"/>
+    <updated>2014-07-19T13:46:56-05:00</updated>
+    <id>http://rd8.github.io/blog/2014/07/19/vmware-in-centos-7</id>
+    <content type="html"><![CDATA[<p>VMWare workstation newest version, 10.0.3 does not have a smooth installation in CentOS 7.</p>
+
+<p>The manual patch way is to manually revise the version check for linux kernel in filter.c to pass the installation of vmnet. Here is the details:
+<code>
+    cd /usr/lib/vmware/modules/source
+    tar -xvf vmnet.tar
+    cd vmnet-only
+    vi filter.c
+</code>
+in line 205:</p>
+
+<p>replace
+<code>
+#if LINUX_VERSION_CODE &lt; KERNEL_VERSION(3, 13, 0)
+</code>
+with
+<code>
+#if LINUX_VERSION_CODE &lt; KERNEL_VERSION(3, 0, 0)
+</code>
+then tar it again:</p>
+
+<p>```
+   cd ..
+   tar -uvf vmnet.tar vmnet-only
+   rm -fr vmnet-only</p>
+
+<p>By the way, to uninstall vmware in CentOS:</p>
+
+<p><code>
+$vmware-installer -l
+</code></p>
+
+<p>The output would give product name and product version strings.
+```
+Product Name         Product Version
+==================   ===============
+vmware-workstation   10.0.1.528992</p>
+
+<p>Use them to uninstall Vmware:
+```
+$vmware-installer -u {product-name}{product-version}</p>
+
+<p>I still mee some minor problems in running vmware due to gtk+ theme engine and pk-gtk-module: /usr/lib64/libgtk-3.so.0 problem, but the workstation GUI works well now.</p>
+
+<p>Linux is our original sin, but Windows is our samsara pain. I mean it is painful when we have not understood and mastered Linux, but the suffer only comes to us once. By using Windows, the pain repeatly comes to us for each new version, for each new platform.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Cairo-dock in CentOS 7]]></title>
     <link href="http://rd8.github.io/blog/2014/07/18/cairo-dock-in-centos-7/"/>
     <updated>2014-07-18T12:37:36-05:00</updated>
     <id>http://rd8.github.io/blog/2014/07/18/cairo-dock-in-centos-7</id>
     <content type="html"><![CDATA[<p>There is some trick in compiling cairo-dock and cairo-dock-plugin in CentOS 7 using Cinnamon desktop manager.</p>
 
-<p>Basically when I was following the instructions on glx-dock offical page, I have already had most of the dependencies installed. The compiling of cairo-dock has no problem, except a road-block met in compiling the plugin folder.</p>
+<p>Basically when I was following the <a href="http://glx-dock.org/ww_page.php?p=By%20compiling&amp;lang=en">instructions on glx-dock offical page</a>, I have already had most of the dependencies installed. The compiling of cairo-dock has no problem, except a road-block met in compiling the plugin folder.</p>
 
 <p>It asked me to install libgldi.so, which was in vain trying yum install.</p>
 
